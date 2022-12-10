@@ -19,7 +19,7 @@
   --gray-2: #afb1b8;
   --black-1: #000000;
 
-  --container-padding: calc((100% - 1200px) / 2);
+  --page-container-padding: calc((100% - 1200px) / 2);
 }
 * {
   margin: 0;
@@ -112,12 +112,12 @@ h6{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-.container {
+.page-container {
   padding: 0 15px;
   max-width: 1200px;
   margin: 0 auto;
 }
-.logo {
+.nav__logo {
   color: var(--accent-color);
   font-family: "Raleway", sans-serif;
   font-size: 26px;
@@ -137,7 +137,7 @@ h6{
 }
 
 /* ----------- Header section ----------- */
-header {
+.page-header{
   position: absolute;
   top: 0;
   height: 80px;
@@ -146,20 +146,20 @@ header {
   background-color: #ffffff;
 }
 
-header .container {
+.page-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   height: 100%;
 }
-header .container nav {
+.nav{
   
   display: flex;
   align-items: center;
   gap: 100px;
 }
-header .container nav .logo {
+.nav__logo {
   color: var(--accent-color);
   font-family: "Raleway", sans-serif;
   font-size: 26px;
@@ -167,12 +167,12 @@ header .container nav .logo {
   line-height: 1.2;
   text-decoration: none;
 }
-header .container nav .nav-menu {
+.nav__menu {
   display: flex;
   list-style: none;
   gap: 80px;
 }
-header .container nav .nav-menu .page {
+.nav__page{
   color: var(--primary-black-color);
   font-weight: 500;
   font-size: 14px;
@@ -183,12 +183,12 @@ header .container nav .nav-menu .page {
   text-transform: capitalize;
 }
 
-header .container .contacts-menu {
+.contacts-menu{
   display: flex;
   list-style: none;
   gap: 80px;
 }
-header .container .contacts-menu li .item {
+.contacts__item{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -202,29 +202,29 @@ header .container .contacts-menu li .item {
   text-decoration: none;
   height: 20px;
 }
-header .container .contacts-menu li .item .icon.email {
+.contacts__icon.email {
   fill: var(--primary-text-color);
   width: 20px;
   height: 12px;
 }
-header .container .contacts-menu li .item .icon.smartphone {
+.contacts__icon.smartphone {
   fill: var(--primary-text-color);
   width: 10px;
   height: 17px;
 }
 
-header .container nav .nav-menu .page:hover,
-header .container nav .nav-menu .page:focus,
-header .container nav .nav-menu .page.current,
-header .container .contacts-menu li .item:hover,
-header .container .contacts-menu li .item:focus,
-header .container .contacts-menu li .item:hover .icon {
+.nav__page:hover,
+.nav__page:focus,
+.nav__page--current,
+header .page-container .contacts-menu li .item:hover,
+header .page-container .contacts-menu li .item:focus,
+header .page-container .contacts-menu li .item:hover .icon {
   color: var(--accent-color);
   fill: #03a9f4;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-.backdrop{
+.modal__backdrop{
   position: fixed;
   display: flex;
   backdrop-filter: brightness(0.7);
@@ -239,7 +239,7 @@ header .container .contacts-menu li .item:hover .icon {
 
 }
 /* Formulario  */
-.btn_{
+.modal__labelbtn{
   position: absolute;
   top: 10px;
   right: 10px;
@@ -247,12 +247,12 @@ header .container .contacts-menu li .item:hover .icon {
   stroke: none;
   cursor: pointer;
 }
-.btn_:hover .color_x {
+.modal__labelbtn:hover .label__btn {
   fill: #2196F3;
   transition: all 150ms ease;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.color_x{
+.label__btn{
   fill: #000000;
 }
 #cerrar{
@@ -272,7 +272,7 @@ header .container .contacts-menu li .item:hover .icon {
   opacity: 0;
   overflow-y: hidden;
 }
-#cerrar:checked + label, #cerrar:checked ~ .backdrop {
+#cerrar:checked + label, #cerrar:checked ~ .modal__backdrop {
   display: none;
   transition: all 150ms ease;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -303,7 +303,7 @@ header .container .contacts-menu li .item:hover .icon {
 
 
 }
-.data-modal form{
+.modal{
   position: absolute;
   display: grid;
   gap: 10px;
@@ -322,7 +322,7 @@ header .container .contacts-menu li .item:hover .icon {
   
   color: #757575;
 }
-.data-modal form > label{
+.modal__label{
   display: flex;
   flex-direction: column;
   width: 450px;
@@ -330,7 +330,7 @@ header .container .contacts-menu li .item:hover .icon {
   margin: 0;
 
 }
-.data-modal form > label > input{
+.modal__input{
   width: 448px;
   height: 40px;
   background-color: #FFFFFF;
@@ -338,7 +338,7 @@ header .container .contacts-menu li .item:hover .icon {
   border: 1px solid rgba(33, 33, 33, 0.2);
 
 }
-.data-modal form > label > textarea{
+.modal__textarea{
   background-color: #FFFFFF;
   border-radius: 5px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -346,7 +346,7 @@ header .container .contacts-menu li .item:hover .icon {
   padding: 10px;
   color: #000000;
 }
-.data-modal form button{
+.modal__button{
   position: relative;
   display: flex;
   width: 200px;
@@ -404,17 +404,17 @@ header .container .contacts-menu li .item:hover .icon {
 }
 /* Iconos modal  */
 
-.icon_frm1{
+.icon-1{
   left: 51px;
   right:0;
   top: 44px;
 }
-.icon_frm2{
+.icon-2{
   left: 51px;
   right:0;
   top: 124px;
 }
-.icon_frm3{
+.icon-3{
   left: 51px;
   right:0;
   top: 204px;
@@ -505,11 +505,11 @@ header .container .contacts-menu li .item:hover .icon {
 .hero {
   background: url("../images/img_hero.jpg");
   background-blend-mode: overlay;
-  padding: 200px var(--container-padding);
+  padding: 200px var(--page-container-padding);
   position: relative;
   text-align: center;
 }
-.hero .hero-title {
+.hero__title {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
@@ -528,11 +528,11 @@ header .container .contacts-menu li .item:hover .icon {
   position: relative;
   z-index: 5;
 }
-.hero button {
+.hero__button{
   position: relative;
   z-index: 5;
 }
-.hero .overlay {
+.hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -542,13 +542,13 @@ header .container .contacts-menu li .item:hover .icon {
   width: 100%;
 }
 /* ----------- Benefits section ----------- */
-.benefits .container .benefits-list {
+.benefits .page-container .benefits__list {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   display: flex;
 }
-.benefits .container .benefits-list li div {
+.benefits .page-container .benefits__list li .benefits__div{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,15 +559,15 @@ header .container .contacts-menu li .item:hover .icon {
   margin-bottom: 15px;
   width: 270px;
 }
-.benefits .container .benefits-list li div .icon-benefit {
+.benefits .page-container .benefits__list li .benefits__div .benefits__icon {
   width: 70px;
   height: 70px;
 }
-.benefits .container .benefits-list li {
+.benefits .page-container .benefits__list li {
   list-style: none;
   width: 270px;
 }
-.benefits .container .benefits-list li .title {
+.benefits .page-container .benefits__list li .benefits__title{
   height: 50px;
   text-transform: uppercase;
   color: var(--primary-black-color);
@@ -575,13 +575,13 @@ header .container .contacts-menu li .item:hover .icon {
 
 /* ----------- What we do----------- */
 
-.what-we-do .container ul {
+.dedication .page-container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.what-we-do .container ul li {
+.dedication .page-container ul li {
   list-style: none;
   width: 360px;
 }
@@ -599,11 +599,11 @@ header .container .contacts-menu li .item:hover .icon {
 }
 
 /*----------- OurTeam section -----------*/
-.team-section {
+.team {
   background-color: var(--gray-1);
 }
 
-.team-section .container .team-cards {
+.team .page-container .team-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -614,26 +614,26 @@ header .container .contacts-menu li .item:hover .icon {
 
 }
 
-.team-section .container .team-cards li {
+.team .page-container .team-cards li {
   background-color: var(--primary-white-color);
   text-align: center;
   list-style: none;
 
 }
-.team-section .container .team-cards li:hover {
+.team .page-container .team-cards li:hover {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 250ms; 
     
 }
-.team-section .container .team-cards li h3 {
+.team .page-container .team-cards li h3 {
   margin: 10px 0 10px 0;
 }
-.team-section .container .team-cards li p {
+.team .page-container .team-cards li p {
   margin-bottom: 10px;
   
 }
-.team-section .container .team-cards li ul {
+.team .page-container .team-cards li ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -643,7 +643,7 @@ header .container .contacts-menu li .item:hover .icon {
   padding: 10px 20px;
   margin-bottom: 20px;
 }
-.team-section .container .team-cards li ul li {
+.team .page-container .team-cards li ul li {
   display: block;
   width: 40px;
   height: 35px;
@@ -755,7 +755,7 @@ header .container .contacts-menu li .item:hover .icon {
 }
 /*----------- Regular Costumers -----------*/
 
-.customers .container ul {
+.customers .page-container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -763,7 +763,7 @@ header .container .contacts-menu li .item:hover .icon {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-.customers .container ul li {
+.customers .page-container ul li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -775,17 +775,17 @@ header .container .contacts-menu li .item:hover .icon {
   width: 170px;
   
 }
-.customers .container ul li:hover {
+.customers .page-container ul li:hover {
   border: solid 1px var(--accent-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 
 }
-.customers .container ul li .icon-customer {
+.customers .page-container ul li .icon-customer {
   fill: var(--gray-2);
 }
-.customers .container ul li:hover .icon-customer {
+.customers .page-container ul li:hover .icon-customer {
   fill: var(--accent-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
@@ -793,23 +793,23 @@ header .container .contacts-menu li .item:hover .icon {
 
 /*----------- footer section ----------- */
 footer {
-  padding: 50px var(--container-padding);
+  padding: 50px var(--page-container-padding);
   background-color: var(--background-black-2);
 }
 footer .logo {
   padding-left: 15px;
   color: var(--accent-color-hover);
 }
-footer .container {
+footer .page-container {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
 }
-footer .container address ul {
+footer .page-container address ul {
   list-style: none;
 }
-footer .container address .contact {
+footer .page-container address .contact {
   display: block;
   color: var(--gray-2);
   font-style: normal;
@@ -819,13 +819,13 @@ footer .container address .contact {
   text-decoration: none;
   padding: 1px 0;
 }
-footer .container address .contact:hover {
+footer .page-container address .contact:hover {
   color: var(--primary-white-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
 
-footer .container aside a {
+footer .page-container aside a {
   display: inline-flex;
   align-items: center;
   list-style: none;

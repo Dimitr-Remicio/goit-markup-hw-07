@@ -23,8 +23,8 @@
     <div class="page-container">
       <nav class="nav">
         <a class="nav__logo" href="./index.html">WebStudio</a>
-        <ul class="nav__menu list">
-          <li><a class="nav__page current" href="./index.html">Estudio</a></li>
+        <ul class="nav__menu">
+          <li><a class="nav__page nav__page--current" href="./index.html">Estudio</a></li>
           <li><a class="nav__page" href="./portfolio.html">Portafolio</a></li>
           <li><a class="nav__page" href="">Contacto</a></li>
         </ul>
@@ -32,8 +32,8 @@
       <!-- contacts  -->
       <ul class="contacts-menu list">
         <li>
-          <a class="item" href="#">
-            <svg class="icon email">
+          <a class="contacts__item" href="#">
+            <svg class="contacts__icon email">
               <use href="./images/SVG/sprite-sheet.svg#email"></use>
             </svg>
             info@devstudio.com
@@ -41,8 +41,8 @@
         </li>
 
         <li>
-          <a class="item" href="#">
-            <svg class="icon smartphone">
+          <a class="contacts__item" href="#">
+            <svg class="contacts__icon smartphone">
               <use href="./images/SVG/sprite-sheet.svg#smartphone"></use>
             </svg>
             +52 55 5529 6000
@@ -54,104 +54,106 @@
 
 
   <!-- Modal Formulario de suscripcion -->
+  <div class="page-modal">
   <input type="checkbox" id="cerrar">
-        <div class="backdrop">
+        <div class="modal__backdrop">
         <div class="data-modal">
-            <label for="cerrar" id="btn-cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="btn_" fill="none"><circle cx="15" cy="15" r="15" fill="#fff" stroke-opacity="1"/><circle cx="15" cy="15" r="14.5" stroke="#000" stroke-opacity=".1"/><path class="color_x" fill="" d="M21 10.108 19.892 9 15.5 13.392 11.108 9 10 10.108l4.392 4.392L10 18.892 11.108 20l4.392-4.392L19.892 20 21 18.892 16.608 14.5 21 10.108Z"/></svg></label>
+            <label for="cerrar" id="btn-cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="modal__labelbtn" fill="none"><circle cx="15" cy="15" r="15" fill="#fff" stroke-opacity="1"/><circle cx="15" cy="15" r="14.5" stroke="#000" stroke-opacity=".1"/><path class="label__btn" fill="" d="M21 10.108 19.892 9 15.5 13.392 11.108 9 10 10.108l4.392 4.392L10 18.892 11.108 20l4.392-4.392L19.892 20 21 18.892 16.608 14.5 21 10.108Z"/></svg></label>
             <h4>Deje sus datos, nos contactaremos con usted</h4>
-            <form>
-                <label>
+            <form class="modal">
+                <label class="modal__label">
                   Nombre
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="icon_frm1 icon_frm" fill="none"><path fill="" d="M6 6a3 3 0 1 0 0-6 3 3 0 1 0 0 6Zm0 1.5c-2.002 0-6 1.005-6 3v.75c0 .412.338.75.75.75h10.5c.412 0 .75-.338.75-.75v-.75c0-1.995-3.998-3-6-3Z"/></svg>
-                  <input type="text" name="username" placeholder=""/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="modal__icon icon-primary " fill="none"><path fill="" d="M6 6a3 3 0 1 0 0-6 3 3 0 1 0 0 6Zm0 1.5c-2.002 0-6 1.005-6 3v.75c0 .412.338.75.75.75h10.5c.412 0 .75-.338.75-.75v-.75c0-1.995-3.998-3-6-3Z"/></svg>
+                  <input class="modal__input" type="text" name="username" placeholder=""/>
                 </label>
-                <label>
+                <label class="modal__label">
                   telefono
-                  <input type="tel" name="telefono" placeholder=""/>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="icon_frm2 icon_frm" fill="none"><path fill="" d="m11.996 9.123-1.838-.21a1.44 1.44 0 0 0-1.187.412l-1.332 1.332a10.888 10.888 0 0 1-4.769-4.77L4.21 4.55a1.44 1.44 0 0 0 .412-1.187l-.21-1.824a1.448 1.448 0 0 0-1.44-1.28H1.72C.902.258.222.938.272 1.756c.384 6.18 5.327 11.115 11.5 11.499.817.05 1.498-.63 1.498-1.448v-1.252a1.434 1.434 0 0 0-1.274-1.432Z"/></svg>
+                  <input class="modal__input" type="tel" name="telefono" placeholder=""/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="modal__icon icon-secondary" fill="none"><path fill="" d="m11.996 9.123-1.838-.21a1.44 1.44 0 0 0-1.187.412l-1.332 1.332a10.888 10.888 0 0 1-4.769-4.77L4.21 4.55a1.44 1.44 0 0 0 .412-1.187l-.21-1.824a1.448 1.448 0 0 0-1.44-1.28H1.72C.902.258.222.938.272 1.756c.384 6.18 5.327 11.115 11.5 11.499.817.05 1.498-.63 1.498-1.448v-1.252a1.434 1.434 0 0 0-1.274-1.432Z"/></svg>
                 </label>
-                <label>
+                <label class="modal__label">
                     Email
-                    <input type="email" name="email" placeholder=""/>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" class="icon_frm3 icon_frm" fill="none"><path fill="" d="M14 0H2C1.175 0 .507.675.507 1.5l-.007 9c0 .825.675 1.5 1.5 1.5h12c.825 0 1.5-.675 1.5-1.5v-9C15.5.675 14.825 0 14 0Zm-.3 3.188L8.398 6.502a.759.759 0 0 1-.795 0L2.3 3.187a.637.637 0 1 1 .675-1.08L8 5.25l5.025-3.143a.637.637 0 1 1 .675 1.08Z"/></svg>
+                    <input class="modal__input"  type="email" name="email" placeholder=""/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" class="modal__icon icon-tertiary" fill="none"><path fill="" d="M14 0H2C1.175 0 .507.675.507 1.5l-.007 9c0 .825.675 1.5 1.5 1.5h12c.825 0 1.5-.675 1.5-1.5v-9C15.5.675 14.825 0 14 0Zm-.3 3.188L8.398 6.502a.759.759 0 0 1-.795 0L2.3 3.187a.637.637 0 1 1 .675-1.08L8 5.25l5.025-3.143a.637.637 0 1 1 .675 1.08Z"/></svg>
                 </label>
-                <label>
+                <label class="modal__label">
                     Comentarios
-                    <textarea name="feedback" rows="5" placeholder="Introduzca el texto"></textarea>
+                    <textarea class="modal__textarea" name="feedback" rows="5" placeholder="Introduzca el texto"></textarea>
                 </label>
-                <label class="terms">
-                    <input id="form" type="checkbox"  name="terms" value="information" />
+                <label class="modal__label terms">
+                    <input class="modal__input"  id="form" type="checkbox"  name="terms" value="information" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" id="form2"><rect width="16" height="15" fill="" rx="2"/><path fill="#fff     " stroke="" stroke-width=".2" d="m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z"/></svg>
                     Estoy de acuerdo con el boletín informativo y acepto los Términos y Condiciones
                 </label>
-                <button type="submit">enviar</button>
-              </form>
-          </div>
-          </div>
+                <button class="modal__button" type="submit">enviar</button>
+            </form>
+        </div>
+        </div>      
+  </div>
   <!-- main content section  -->
 
   <main>
     <!-- Hero section  -->
-    <section class="hero bg-hero">
-      <h1 class="hero-title">SOLUCIONES EFICACES PARA SU NEGOCIO</h1>
-      <button class="button-primary" type="button">solicite nuestro servicio</button>
-      <div class="overlay"></div>
+    <section class="hero">
+      <h1 class="hero__title">SOLUCIONES EFICACES PARA SU NEGOCIO</h1>
+      <button class="hero__button button-primary" type="button">solicite nuestro servicio</button>
+      <div class="hero__overlay"></div>
     </section>
     <!-- Benefits section  -->
     <section class="benefits">
       <div class="container">
-        <ul class="benefits-list">
+        <ul class="benefits__list">
           <li>
-            <div>
-              <svg class="icon-benefit">
+            <div class="benefits__div">
+              <svg class="benefits__icon">
                 <use href="./images/SVG/sprite-sheet.svg#antena"></use>
               </svg>
             </div>
 
-            <h3 class="title">Atencion a los detalles</h3>
-            <p class="description">
+            <h3 class="benefits__title">Atencion a los detalles</h3>
+            <p class="benefits__description">
               Nos adentramos en todos los detalles y procesos de su negocio,
               para así desarrollar una solución a su medida.
             </p>
           </li>
 
           <li>
-            <div>
-              <svg class="icon-benefit">
+            <div class="benefits__div">
+              <svg class="benefits__icon">
                 <use href="./images/SVG/sprite-sheet.svg#clock"></use>
               </svg>
             </div>
 
-            <h3 class="title">Puntualidad</h3>
-            <p class="description">
+            <h3 class="benefits__title">Puntualidad</h3>
+            <p class="benefits__description">
               Con nosotros, usted puede sentirse seguro y protegido. 
               Un principio importante de la empresa: respetar su tiempo y respetar los plazos acordados.
             </p>
           </li>
 
           <li>
-            <div>
-              <svg class="icon-benefit">
+            <div class="benefits__div">
+              <svg class="benefits__icon">
                 <use href="./images/SVG/sprite-sheet.svg#diagram"></use>
               </svg>
             </div>
 
-            <h3 class="title">Planificacion</h3>
-            <p class="description">
+            <h3 class="benefits__title">Planificacion</h3>
+            <p class="benefits__description">
               Usted podrá observar y participar en cada fase del desarrollo 
               y aplicación de soluciones.
             </p>
           </li>
 
           <li>
-            <div>
-              <svg class="icon-benefit">
+            <div class="benefits__div">
+              <svg class="benefits__icon">
                 <use href="./images/SVG/sprite-sheet.svg#astronaut"></use>
               </svg>
             </div>
 
-            <h3 class="title">Tecnologia moderna</h3>
-            <p class="description">
+            <h3 class="benefits__title">Tecnologia moderna</h3>
+            <p class="benefits__description">
               Usamos herramientas innovadoras para resolver las tareas asignadas.
                Es hora de simplificar los procesos laborales.
             </p>
@@ -160,8 +162,8 @@
       </div>
     </section>
     <!-- What we do section  -->
-    <section class="what-we-do no-top-pading ">
-      <div class="container">
+    <section class="dedication no-top-pading ">
+      <div class="page-container">
         <h2 class="section-title">A qué nos dedicamos</h2>
         <!-- images  -->
         <ul>
@@ -189,8 +191,8 @@
       </div>
     </section>
     <!-- Our team  -->
-    <section class="section team-section">
-      <div class="container">
+    <section class="team">
+      <div class="page-container">
         <h2 class="section-title">Nuestro Equipo</h2>
         <!-- Cards  -->
         <ul class="team-cards">
@@ -364,7 +366,7 @@
     </section>
     <!-- Regular costumers  -->
     <section class="section customers">
-      <div class="container">
+      <div class="page-container">
         <h2 class="section-title">Clientes Regulares</h2>
 
         <ul>
@@ -407,7 +409,7 @@
 
   <footer>
     <a class="logo" href="">WebStudio</a>
-    <div class="container">
+    <div class="page-container">
       <address>
         <ul>
           <li>
