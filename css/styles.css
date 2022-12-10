@@ -19,7 +19,7 @@
   --gray-2: #afb1b8;
   --black-1: #000000;
 
-  --page-container-padding: calc((100% - 1200px) / 2);
+  --container-padding: calc((100% - 1200px) / 2);
 }
 * {
   margin: 0;
@@ -112,7 +112,7 @@ h6{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-.page-container {
+.container {
   padding: 0 15px;
   max-width: 1200px;
   margin: 0 auto;
@@ -143,14 +143,13 @@ h6{
   height: 80px;
   width: 100%;
   z-index: 1;
-  background-color: #ffffff;
+  background-color: var(--primary-white-color);
 }
 
-.page-container {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 100%;
 }
 .nav{
@@ -216,9 +215,12 @@ h6{
 .nav__page:hover,
 .nav__page:focus,
 .nav__page--current,
-header .page-container .contacts-menu li .item:hover,
-header .page-container .contacts-menu li .item:focus,
-header .page-container .contacts-menu li .item:hover .icon {
+.contacts__item:hover,
+.contacts__item:focus,
+.contacts__item:hover .list,
+.contacts__icon:hover,
+.contacts__icon:focus,
+.contacts__icon:hover .list{
   color: var(--accent-color);
   fill: #03a9f4;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -376,12 +378,12 @@ header .page-container .contacts-menu li .item:hover .icon {
   cursor: pointer;
 }
 
-.data-modal form input{
-  padding-left: 35px;
-}
-
-.data-modal form svg{
+.modal__icon{
   position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  transform: translate(60%,300%);
   fill: #000000;
 }
 
@@ -390,34 +392,17 @@ header .page-container .contacts-menu li .item:hover .icon {
   transition: all 150ms ease;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.data-modal label:hover .icon_frm{
+.data-modal label:hover .modal__icon{
   fill: #2196F3;
   transition: all 150ms ease;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.data-modal label:focus-within .icon_frm{
+.data-modal label:focus-within .modal__icon{
   fill: #2196F3;
   transition: all 150ms ease;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-/* Iconos modal  */
-
-.icon-1{
-  left: 51px;
-  right:0;
-  top: 44px;
-}
-.icon-2{
-  left: 51px;
-  right:0;
-  top: 124px;
-}
-.icon-3{
-  left: 51px;
-  right:0;
-  top: 204px;
 }
 /* TERMINOS Y CONDICIONES */
 
@@ -494,18 +479,18 @@ header .page-container .contacts-menu li .item:hover .icon {
 }
 
 .section-title{
+  display: ;
   color: var(--primary-black-color);
   font-size: 32px;
   font-weight: 700px;
-  padding: 30px 0;
-  text-align: center;
+  padding: 0px 0;  
 } 
 
 /* ----------- Hero section ----------- */
 .hero {
   background: url("../images/img_hero.jpg");
   background-blend-mode: overlay;
-  padding: 200px var(--page-container-padding);
+  padding: 200px var(--container-padding);
   position: relative;
   text-align: center;
 }
@@ -542,46 +527,54 @@ header .page-container .contacts-menu li .item:hover .icon {
   width: 100%;
 }
 /* ----------- Benefits section ----------- */
-.benefits .page-container .benefits__list {
+.benefits__list {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   display: flex;
 }
-.benefits .page-container .benefits__list li .benefits__div{
+.benefits__div{
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: var(--gray-1);
-  border-radius: 15px;
+  border-radius: 10px;
   height: 120px;
   margin-bottom: 15px;
-  width: 270px;
+  width: 26 0px;
 }
-.benefits .page-container .benefits__list li .benefits__div .benefits__icon {
+.benefits__icon {
   width: 70px;
   height: 70px;
 }
-.benefits .page-container .benefits__list li {
+.benefits__list li {
   list-style: none;
-  width: 270px;
+  width: 290px;
+  padding: 10px;
 }
-.benefits .page-container .benefits__list li .benefits__title{
+.benefits__title{
   height: 50px;
   text-transform: uppercase;
   color: var(--primary-black-color);
 }
 
 /* ----------- What we do----------- */
-
-.dedication .page-container ul {
+.dedication .container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 45px;
 }
-.dedication .page-container ul li {
+.section-title{
+  color: var(--primary-black-color);
+  font-size: 32px;
+  font-weight: 700px;
+  padding: 30px 0;
+  text-align: center;
+}
+.dedication li {
   list-style: none;
   width: 360px;
 }
@@ -599,11 +592,11 @@ header .page-container .contacts-menu li .item:hover .icon {
 }
 
 /*----------- OurTeam section -----------*/
-.team {
+.team-section {
   background-color: var(--gray-1);
 }
 
-.team .page-container .team-cards {
+.team-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -611,29 +604,28 @@ header .page-container .contacts-menu li .item:hover .icon {
 }
 .team-cards *{
   border-radius: 5px;
-
 }
 
-.team .page-container .team-cards li {
+.team-cards li {
   background-color: var(--primary-white-color);
   text-align: center;
   list-style: none;
 
 }
-.team .page-container .team-cards li:hover {
+.team-cards li:hover {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 250ms; 
     
 }
-.team .page-container .team-cards li h3 {
+.team-cards h3 {
   margin: 10px 0 10px 0;
 }
-.team .page-container .team-cards li p {
+.team-cards p {
   margin-bottom: 10px;
   
 }
-.team .page-container .team-cards li ul {
+.team-cards ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -643,14 +635,22 @@ header .page-container .contacts-menu li .item:hover .icon {
   padding: 10px 20px;
   margin-bottom: 20px;
 }
-.team .page-container .team-cards li ul li {
+.team-cards li ul li {
   display: block;
   width: 40px;
   height: 35px;
   border-radius: 25px;
   
 }
+.team-cards li ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  border-radius: 25px;
+  height: 35px;
+  width: 35px;
+}
 
 .icon-{
   fill: var(--gray-1);
@@ -700,6 +700,7 @@ header .page-container .contacts-menu li .item:hover .icon {
   list-style: none;
 }
 .portfolio .menu li button {
+
   border: none;
   outline: none;
   color: var(--primary-black-color);
@@ -755,15 +756,16 @@ header .page-container .contacts-menu li .item:hover .icon {
 }
 /*----------- Regular Costumers -----------*/
 
-.customers .page-container ul {
+.customers .container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   list-style: none;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-.customers .page-container ul li {
+.customers .container ul li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -775,17 +777,17 @@ header .page-container .contacts-menu li .item:hover .icon {
   width: 170px;
   
 }
-.customers .page-container ul li:hover {
+.customers .container ul li:hover {
   border: solid 1px var(--accent-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 
 }
-.customers .page-container ul li .icon-customer {
+.customers .container ul li .icon-customer {
   fill: var(--gray-2);
 }
-.customers .page-container ul li:hover .icon-customer {
+.customers .container ul li:hover .icon-customer {
   fill: var(--accent-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
@@ -793,23 +795,23 @@ header .page-container .contacts-menu li .item:hover .icon {
 
 /*----------- footer section ----------- */
 footer {
-  padding: 50px var(--page-container-padding);
+  padding: 50px var(--container-padding);
   background-color: var(--background-black-2);
 }
 footer .logo {
   padding-left: 15px;
   color: var(--accent-color-hover);
 }
-footer .page-container {
+footer .container {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
 }
-footer .page-container address ul {
+footer .container address ul {
   list-style: none;
 }
-footer .page-container address .contact {
+footer .container address .contact {
   display: block;
   color: var(--gray-2);
   font-style: normal;
@@ -819,13 +821,13 @@ footer .page-container address .contact {
   text-decoration: none;
   padding: 1px 0;
 }
-footer .page-container address .contact:hover {
+footer .container address .contact:hover {
   color: var(--primary-white-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
 
-footer .page-container aside a {
+footer .container aside a {
   display: inline-flex;
   align-items: center;
   list-style: none;

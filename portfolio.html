@@ -15,21 +15,19 @@
   <!-- Header section -->
   <header class="page-header">
     <div class="container">
-      <nav>
-        <!-- Logo  -->
-        <a class="logo" href="./index.html">WebStudio</a>
-        <!-- menu  -->
-        <ul class="nav-menu list">
-          <li><a class="page " href="./index.html">studio</a></li>
-          <li><a class="page current" href="./portfolio.html">portfolio</a></li>
-          <li><a class="page" href="">contact</a></li>
+      <nav class="nav">
+        <a class="nav__logo" href="./index.html">WebStudio</a>
+        <ul class="nav__menu">
+          <li><a class="nav__page nav__page--current" href="./index.html">Estudio</a></li>
+          <li><a class="nav__page" href="./portfolio.html">Portafolio</a></li>
+          <li><a class="nav__page" href="">Contacto</a></li>
         </ul>
       </nav>
       <!-- contacts  -->
       <ul class="contacts-menu list">
         <li>
-          <a class="item" href="#">
-            <svg class="icon email">
+          <a class="contacts__item" href="#">
+            <svg class="contacts__icon email">
               <use href="./images/SVG/sprite-sheet.svg#email"></use>
             </svg>
             info@devstudio.com
@@ -37,11 +35,11 @@
         </li>
 
         <li>
-          <a class="item" href="#">
-            <svg class="icon smartphone">
+          <a class="contacts__item" href="#">
+            <svg class="contacts__icon smartphone">
               <use href="./images/SVG/sprite-sheet.svg#smartphone"></use>
             </svg>
-            +38 096 111 11 11
+            +52 55 5529 6000
           </a>
         </li>
       </ul>
@@ -144,51 +142,55 @@
       <address>
         <ul>
           <li>
-            <a class="contact" href="#" target="_blank" rel="noopener noreferrer">Kiev, avenida. Lesy Ukrainkiy, 26</a>
+            <a class="contact" href="#" target="_blank" rel="noopener noreferrer">Calz. Ticomán 500, Ciudad de <br>México, CDMX, México</a>
           </li>
           <li>
             <a class="contact" href="mailto:info@devstudio.com">info@devstudio.com</a>
           </li>
           <li>
-            <a class="contact" href="tel:380961111111">+38 096 111 11 11</a>
+            <a class="contact" href="tel:380961111111">+52 55 5529 6000</a>
           </li>
         </ul>
       </address>
       <aside>
-        <p>FIND US</p>
-        <ul>
-          <li>
-            <a href="#">
-              <svg class="icon" width="20" height="20">
-                <use href="./images/SVG/sprite-sheet.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="icon" width="20" height="20">
-                <use href="./images/SVG/sprite-sheet.svg#twitter"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="icon" width="20" height="20">
-                <use href="./images/SVG/sprite-sheet.svg#facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="icon" width="20" height="20">
-                <use href="./images/SVG/sprite-sheet.svg#linkedin"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+        <div class="find">
+          <h5>Encuentrenos en</h5>
+          <a href="https://www.instagram.com" >
+            <svg class="social-icons-"width="50" height="50" fill="none">
+              <path class="svg-circle2" d="M44 22a21.931 21.931 0 0 1-6.444 15.556A21.931 21.931 0 0 1 22 44a21.931 21.931 0 0 1-15.556-6.444A21.931 21.931 0 0 1 0 22 21.931 21.931 0 0 1 6.444 6.444 21.931 21.931 0 0 1 22 0a21.931 21.931 0 0 1 15.556 6.444A21.931 21.931 0 0 1 44 22Z"/>
+              <use class="social-icon2" href="./images/SVG/sprite-sheet.svg#instagram" width="44" height="44"></use>
+            </svg> 
+          </a>
+          <a href="https://www.twitter.com" >
+            <svg class="social-icons-"width="50" height="50" fill="none">
+              <path class="svg-circle2" d="M44 22a21.931 21.931 0 0 1-6.444 15.556A21.931 21.931 0 0 1 22 44a21.931 21.931 0 0 1-15.556-6.444A21.931 21.931 0 0 1 0 22 21.931 21.931 0 0 1 6.444 6.444 21.931 21.931 0 0 1 22 0a21.931 21.931 0 0 1 15.556 6.444A21.931 21.931 0 0 1 44 22Z"/>
+              <use class="social-icon2" href="./images/SVG/sprite-sheet.svg#twitter" width="44" height="44"></use>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com" >
+            <svg class="social-icons-"width="50" height="50" fill="none">
+              <path class="svg-circle2" d="M44 22a21.931 21.931 0 0 1-6.444 15.556A21.931 21.931 0 0 1 22 44a21.931 21.931 0 0 1-15.556-6.444A21.931 21.931 0 0 1 0 22 21.931 21.931 0 0 1 6.444 6.444 21.931 21.931 0 0 1 22 0a21.931 21.931 0 0 1 15.556 6.444A21.931 21.931 0 0 1 44 22Z"/>
+              <use class="social-icon2" href="./images/SVG/sprite-sheet.svg#facebook" width="44" height="44"></use>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com" >
+            <svg class="social-icons-"width="50" height="50" fill="none">
+              <path class="svg-circle2" d="M44 22a21.931 21.931 0 0 1-6.444 15.556A21.931 21.931 0 0 1 22 44a21.931 21.931 0 0 1-15.556-6.444A21.931 21.931 0 0 1 0 22 21.931 21.931 0 0 1 6.444 6.444 21.931 21.931 0 0 1 22 0a21.931 21.931 0 0 1 15.556 6.444A21.931 21.931 0 0 1 44 22Z"/>
+              <use class="social-icon2" href="./images/SVG/sprite-sheet.svg#linkedin" width="44" height="44"></use>
+            </svg>
+          </a>
+        </div>
       </aside>
-    </div>
-
+      <div class="form_foot">
+        <form>
+          <label>
+            Suscríbase al Boletin Informativo
+            <input type="email" name="email" placeholder="Correo Electronico"/>
+          </label>
+          <button type="submit">Suscribase <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" class="send_ico"><path fill="" class="color_icon2" d="M24 0 0 13.5l7.67 2.84L19.5 5.25l-8.998 12.14.007.002-.009-.002V24l4.301-5.018L20.251 21 24 0Z"/></svg></button>
+        </form>
+      </div> 
+      </div>
   </footer>
 </body>
 
