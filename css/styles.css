@@ -113,6 +113,12 @@ h6{
   transition: all ease 150ms;
 }
 .container {
+  flex-direction: column;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-container {
   padding: 0 15px;
   max-width: 1200px;
   margin: 0 auto;
@@ -146,7 +152,7 @@ h6{
   background-color: var(--primary-white-color);
 }
 
-.container {
+.page-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -165,6 +171,7 @@ h6{
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
+  padding-left: 15px;
 }
 .nav__menu {
   display: flex;
@@ -482,7 +489,8 @@ h6{
 }
 
 .section-title{
-  display: ;
+  align-items: center;
+  height: 100%;
   color: var(--primary-black-color);
   font-size: 32px;
   font-weight: 700px;
@@ -646,7 +654,6 @@ h6{
   
 }
 .team-cards li ul li a {
-  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -805,16 +812,16 @@ footer .logo {
   padding-left: 15px;
   color: var(--accent-color-hover);
 }
-footer .container {
+footer .page-container {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
 }
-footer .container address ul {
+footer .page-container address ul {
   list-style: none;
 }
-footer .container address .contact {
+footer .page-container address .contact {
   display: block;
   color: var(--gray-2);
   font-style: normal;
@@ -824,13 +831,13 @@ footer .container address .contact {
   text-decoration: none;
   padding: 1px 0;
 }
-footer .container address .contact:hover {
+footer .page-container address .contact:hover {
   color: var(--primary-white-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
 
-footer .container aside a {
+footer .page-container aside a {
   display: inline-flex;
   align-items: center;
   list-style: none;
