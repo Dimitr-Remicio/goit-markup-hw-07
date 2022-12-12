@@ -150,6 +150,10 @@ h6{
   width: 100%;
   z-index: 1;
   background-color: var(--primary-white-color);
+
+  border: 1px solid #ECECEC;
+  filter: drop-shadow(0px 1px 8px #00000012);
+
 }
 
 .page-container {
@@ -187,6 +191,7 @@ h6{
   letter-spacing: 0.02em;
   text-decoration: none;
   text-transform: capitalize;
+
 }
 
 .contacts-menu{
@@ -218,7 +223,6 @@ h6{
   width: 10px;
   height: 17px;
 }
-
 .nav__page:hover,
 .nav__page:focus,
 .nav__page--current,
@@ -230,9 +234,20 @@ h6{
 .contacts__icon:hover .list{
   color: var(--accent-color);
   fill: #03a9f4;
+  
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all ease 150ms;
+  transition: ease 150ms;
 }
+.nav__page:hover,
+.nav__page:focus,
+.nav__page--current{
+  border-bottom: #2196F3 solid 3px;
+  padding: 29px 0;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: ease 150ms;
+
+}
+
 .modal__backdrop{
   position: fixed;
   display: flex;
@@ -504,6 +519,8 @@ h6{
   padding: 200px var(--container-padding);
   position: relative;
   text-align: center;
+  filter: drop-shadow(0px 5px 8px #0000002a);
+
 }
 .hero__title {
   font-family: 'Roboto';
@@ -706,14 +723,15 @@ h6{
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 50px;
+  margin: 50px;
   list-style: none;
 }
-.portfolio .menu li button {
-
+.menu__button {
+  list-style: none;
   border: none;
   outline: none;
   color: var(--primary-black-color);
+  border-radius: 5px;
 
   font-weight: 700;
   font-size: 16px;
@@ -724,41 +742,48 @@ h6{
   text-decoration: none;
   text-transform: capitalize;
 }
-.portfolio .menu li button:hover {
+.menu__button:hover {
   box-shadow: rgba(82, 82, 82, 0.3) 0 3px 5px;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
 
-.portfolio .cards {
+.cards {
+  list-style: none;
+
   justify-content: space-between;
   flex-wrap: wrap;
 
   display: flex;
 }
-.portfolio .cards li {
+.cards__list{
   margin-bottom: 50px;
-  width: 360px;
+  width: 365px;
   border: solid 1px var(--gray-1);
+  padding-bottom: 30px;
+  border-radius: 10px;
 }
-.portfolio .cards li:hover {
+.cards__list:hover {
   box-shadow: rgba(82, 82, 82, 0.3) 0 3px 5px;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: all ease 150ms;
 }
-
-.portfolio .cards li a p {
-  color: var(--primary-text-color);
-  font-size: 16px;
+.cards__title  {
+  color: var(--primary-black-color);
   padding: 15px;
 }
+.cards__text{
+  color: var(--primary-text-color);
+  font-size: 16px;
+  padding-left: 15px;
+}
 
-.portfolio .cards li a img {
+.cards__img {
   width: 100%;
 }
 
-.portfolio .menu li button:hover,
-.portfolio .menu li button.current {
+.menu__button:hover,
+.menu__button--current {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
